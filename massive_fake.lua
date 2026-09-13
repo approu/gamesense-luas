@@ -1,4 +1,4 @@
-local vector = require("vector")
+local vector = require("vector") -- Not mine
 local sv_ui = ui.reference("MISC", "Settings", "sv_maxusrcmdprocessticks2")
 local fakewalk_key = ui.new_hotkey("AA", "Other", "Fakewalk")
 local discharge_key = ui.new_hotkey("AA", "Other", "Exploit Discharge / Flick")

@@ -16,7 +16,6 @@ local original_limit = 1
 local function reset_fakelag()
     if is_hit_active then
         is_hit_active = false
-        -- Предохранитель: возвращаем только в пределах 0-10
         local safe_original = math.max(0, math.min(10, original_limit))
         ui.set(ref_dt_fl_limit, safe_original)
         client.color_log(255, 100, 100, "[FL Debug] Reset DT Fake Lag limit to: " .. tostring(safe_original))
@@ -84,8 +83,6 @@ client.set_event_callback("setup_command", function()
         if not is_hit_active then
             original_limit = ui.get(ref_dt_fl_limit)
             is_hit_active = true
-            
-            -- Предохранитель: не ставим больше 10
             local target_limit = math.max(0, math.min(10, ui.get(menu_fl_amount)))
             ui.set(ref_dt_fl_limit, target_limit)
             

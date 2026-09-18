@@ -24,10 +24,9 @@ client.set_event_callback("voice", function(e)
 
     local target = p.client + 1
     if target ~= entity.get_local_player() then
-        return -- чужие пакеты не трогаем
+        return  -- modifying only our packets
     end
 
-    -- только свои
     p.xuid_high = 0
     p.xuid_low = 0
     p.sequence_bytes = 0
